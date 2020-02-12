@@ -42,7 +42,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/class-add-post-type-instruct
 register_activation_hook( __FILE__, array( 'Add_Post_Type_Instructions', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'Add_Post_Type_Instructions', 'deactivate' ) );
 
-// add_action( 'plugins_loaded', array( 'Add_Post_Type_Instructions', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'Add_Post_Type_Instructions', 'get_instance' ) );
 
 
 /*
@@ -57,7 +57,7 @@ do_action( 'APTI_loaded', plugin_dir_path( __FILE__ ) );
 function apti_load_textdomain() {
 	load_plugin_textdomain( 'apti', false, dirname(plugin_basename(__FILE__)) . '/languages/' );
 }
-// add_action( 'init', 'apti_load_textdomain', 1 );
+add_action( 'init', 'apti_load_textdomain', 1 );
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
